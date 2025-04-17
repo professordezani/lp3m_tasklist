@@ -9,7 +9,7 @@ class TaskListApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        "/list":(context) => const ListPage(),
+        "/list":(context) => ListPage(),
         "/create":(context) => const CreatePage(),
       },
       initialRoute: "/list",

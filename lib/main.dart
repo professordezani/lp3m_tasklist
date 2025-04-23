@@ -2,7 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:tasklist/views/app.dart';
 
-const firebaseConfig = FirebaseOptions(
+const firebaseConfig = FirebaseOptions( 
   apiKey: "AIzaSyBPLl-W1Z2a2yludyXwkrhgWQy0ZaumPVY",
   authDomain: "tasklist-lp3m2025-02.firebaseapp.com",
   projectId: "tasklist-lp3m2025-02",

@@ -21,7 +21,16 @@ class ListPage extends StatelessWidget {
           return Column(
             children: snapshot
               .data!.docs
-              .map((doc) => Text(doc['title']))
+              .map((doc) => Dismissible(
+                background: Container(color: Colors.red),
+                onDismissed: (_) => doc.reference.delete(),
+                key: Key(doc.id),
+                child: CheckboxListTile(
+                  value: doc['completed'],
+                  onChanged: (value) => doc.reference.update({"completed": value}),
+                  title: Text(doc['title'])),
+              )
+              )
               .toList(),
           );
         }

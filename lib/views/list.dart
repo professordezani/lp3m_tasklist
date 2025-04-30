@@ -12,7 +12,11 @@ class ListPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text("Task List")),
       body: StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
-        stream: db.collection('tasks').snapshots(),
+        stream: db
+          .collection('tasks')
+          // .where("completed", isEqualTo: false)
+          .orderBy("completed")
+          .snapshots(),
         builder: (context, snapshot) {
 
           if(!snapshot.hasData)

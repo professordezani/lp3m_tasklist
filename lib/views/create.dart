@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
@@ -24,10 +26,10 @@ class CreatePage extends StatelessWidget {
       body: Column(
         children: [
           Container(
-            margin: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             child: TextField(
               controller: txtTitle,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(),
                 labelText: "Nome da Task",
               ),
@@ -35,7 +37,7 @@ class CreatePage extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () => save(context),
-            child: Text("Salvar"),
+            child: const Text("Salvar"),
           )
         ],
       ),

@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, use_key_in_widget_constructors, must_be_immutable, curly_braces_in_flow_control_structures
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +20,7 @@ class ListPage extends StatelessWidget {
         builder: (context, snapshot) {
 
           if(!snapshot.hasData)
-            return Text("Carregando...");
+            return const Text("Carregando...");
 
           return Column(
             children: snapshot

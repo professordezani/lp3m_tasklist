@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tasklist/views/create.dart';
 import 'package:tasklist/views/list.dart';
+import 'package:tasklist/views/login.dart';
+import 'package:tasklist/views/registro.dart';
 
 class TaskListApp extends StatelessWidget {
   const TaskListApp({super.key});
@@ -12,8 +14,10 @@ class TaskListApp extends StatelessWidget {
       routes: {
         "/list":(context) => ListPage(),
         "/create":(context) => CreatePage(),
+        "/login":(context) => LoginPage(),
+        "/registro":(context) => RegistroPage(),
       },
-      initialRoute: "/list",
+      initialRoute: "/login",
     );
   }
 }

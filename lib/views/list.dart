@@ -3,19 +3,32 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-class ListPage extends StatelessWidget {
+class ListPage extends StatefulWidget {
+  @override
+  State<ListPage> createState() => _ListPageState();
+}
 
+class _ListPageState extends State<ListPage> {
   var db = FirebaseFirestore.instance;
+
+  bool completed = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Task List")),
+      appBar: AppBar(
+        title: const Text("Task List"),
+        actions: [
+          IconButton(
+            onPressed: () => setState(() => completed = !completed),
+            icon: Icon(Icons.check),
+          ),
+        ],
+      ),
       body: StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
         stream: db
           .collection('tasks')
-          // .where("completed", isEqualTo: false)
-          .orderBy("completed")
+          .where("completed", isEqualTo: completed)
           .snapshots(),
         builder: (context, snapshot) {
 
